@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project FRIDAY - An AI Assistant Interface">
+    <title>Project FRIDAY</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="chat-header" id="chat-header">
+        <h1>PROJECT FRIDAY</h1>
+    </header>
+    
+    <main class="main-container">
+        <div class="message-box" id="message-box" role="log" aria-live="polite">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+        
+        <div class="controls-container">
+            <form class="chat-input" id="chat-input" onsubmit="sendMessage(event)">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Type your message..." 
+                    aria-label="Message input"
+                    required
+                >
+            </form>
+            
+            <div class="button-group">
+                <button 
+                    class="recordButton" id="recordButton"> TALK TO ME </button>
+                <button 
+                    class="button" 
+                    onclick="sendMessage(event)"
+                    aria-label="Send message"> SEND 
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
